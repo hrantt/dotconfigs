@@ -1,0 +1,8 @@
+nitrogen --random --set-zoom-fill /usr/share/backgrounds &
+
+picom -f &
+xrandr --rate 144
+xhost +
+pulseaudio -D
+mpd
+xautolock -time 15 -locker "systemctl suspend" -detectsleep &
