@@ -1,21 +1,15 @@
 #
 # wm independent hotkeys
 #
-Print
-    maim -s | xclip -selection clipboard -t image/png
-# lock windows
-super + F12
-	slock
+
 # terminal emulator
 super + Return
-	alacritty
+	termite
 
 # program launcher
 super + d
 	dmenu_run
-# run browser
-super + shift + b
-	firefox
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -29,7 +23,7 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }x
+super + {_,shift + }w
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
@@ -49,10 +43,9 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s}
-	bspc node -t {tiled,pseudo_tiled,floating}
-super + {_,shift + }f
-	bspc {desktop -l next,node -t ~fullscreen}
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
@@ -126,6 +119,3 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-# cycle windows
-alt + {_,shift + }Tab
-	bspc node -f {next,prev}
