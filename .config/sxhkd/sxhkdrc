@@ -8,7 +8,7 @@ super + F12
 	slock
 # terminal emulator
 super + Return
-	alacritty
+	alacritty -o font.size=7
 
 # program launcher
 super + d
@@ -20,7 +20,17 @@ super + shift + b
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
+# Brightness controls
+super + F5
+	/home/guts/bin/brightness_down.sh
+super + F6
+	/home/guts/bin/brightness_up.sh
+# Volume control 
+super + F2
+	pactl -- set-sink-volume @DEFAULT_SINK@  -1%
+super + F3
+	pactl -- set-sink-volume @DEFAULT_SINK@  +1%
+
 # bspwm hotkeys
 #
 

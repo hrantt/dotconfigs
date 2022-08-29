@@ -28,7 +28,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+;monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -53,7 +53,7 @@ module-margin-right = 2
 
 font-0 = Noto Sans CJK SC:style=Regular:size=9;0
 font-1 = Material Icons:size=11;2
-font-2 = xos4\ Terminus:size=14;0
+font-2 = xos4\\ Terminus:size=14;0
 font-3 = Siji:pixelsize=11;1
 font-4 = Font Awesome 5 Free Regular:style=regular:size=11;0
 font-5 = Unifont:style=Sans-Serif:size=5;1
@@ -62,8 +62,8 @@ font-5 = Unifont:style=Sans-Serif:size=5;1
 #font-2 = siji:size=1;1
 
 modules-left = bspwm 
-modules-center = mpd
-modules-right = pulseaudio xkeyboard memory cpu temperature date powermenu
+modules-center = mpd 
+modules-right = pulseaudio xkeyboard wlan memory cpu temperature date battery powermenu 
 #modules-right = powermenu 
 
 tray-position = right
@@ -83,6 +83,7 @@ wm-restack = bspwm
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -227,7 +228,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -297,7 +298,7 @@ bar-volume-foreground-3 = #55aa55
 bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
+bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
